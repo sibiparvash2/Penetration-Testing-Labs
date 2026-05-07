@@ -99,7 +99,9 @@ download /etc/passwd
 
 - Successfully downloaded the `/etc/passwd` file from the target system for offline analysis.
 
+
 ![Password Download](../Screenshots/ftppassworddownload-7.png)
+
 
 ![Downloaded Password File](../Screenshots/ftppassworddownload-8.png)
 
