@@ -1,1 +1,14 @@
+# FTP Enumeration & Exploitation
 
+## Initial Nmap Scan
+
+![Nmap Scan](../Screenshot/ftpnmap-1.png)
+
+```bash
+nmap -sV -sC -p21 192.168.0.110
+```
+- Performed an initial service enumeration scan against the FTP service running on port 21.
+- Identified the FTP service version.
+- Detected anonymous login access enabled.
+- Retrieved FTP banner information.
+- Identified a potentially vulnerable FTP software version.
