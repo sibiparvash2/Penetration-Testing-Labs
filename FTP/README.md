@@ -3,7 +3,7 @@
 ## Initial Nmap Scan
 
 ```bash
-nmap -sV -sC -p21 <TARGET-IP>
+nmap -sV -sC -p21 192.168.0.110
 ```
 
 - Performed an initial service enumeration scan against the FTP service running on port 21.
