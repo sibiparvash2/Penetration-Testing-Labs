@@ -11,4 +11,4 @@ nmap -sV -sC -p21 192.168.0.110
 - Identified the FTP service version.
 - Detected anonymous login access enabled.
 - Retrieved FTP banner information.
-- Identified a potentially vulnerable FTP software version.
+- Identified a potentially vulnerable FTP software version
