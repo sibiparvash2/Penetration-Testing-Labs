@@ -116,8 +116,7 @@ pwd
   - Hostname details
   - Current working directory information
 
-![Post Exploitation Enumeration](../Screenshots/smbconsole2-7.png)
-
+![Post Exploitation Enumeration](../Screenshots/smbmsfconsole2-7.png)
 ___
 
 
