@@ -117,6 +117,7 @@ pwd
   - Current working directory information
 
 ![Post Exploitation Enumeration](../Screenshots/smbconsole-7.png)
+
 ___
 
 
