@@ -162,7 +162,7 @@ find / -perm -u=s -type f 2>/dev/null
 
 - Enumerated binaries capable of running with elevated privileges.
 
-![Privilege Escalation Enumeration](../Screenshots/privilege escalation-10.png)
+![Privilege Escalation Enumeration](../Screenshots/privilegeescalation-10.png)
 
 ---
 
