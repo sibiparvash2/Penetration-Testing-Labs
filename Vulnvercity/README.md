@@ -5,8 +5,6 @@
 - Target Machine: `Vulnversity`
 - Platform: [TryHackMe](https://tryhackme.com)
 
-![TryHackMe Machine](../Screenshots/tryhackme-1.png)
-
 ---
 
 ## Initial Setup
