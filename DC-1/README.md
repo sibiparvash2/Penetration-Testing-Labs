@@ -34,7 +34,7 @@ nmap 192.168.0.107 -sV -sC -T4
   - `HTTP`
   - `RPCBind`
 
-![Nmap Scan](Screenshots/nmapscan-2.png)
+![Nmap Scan](../Screenshots/nmapscan-2.png)
 
 ---
 
@@ -48,7 +48,7 @@ http://192.168.0.107
 - Confirmed a website was being hosted.
 - Identified the **CMS** as **Drupal** via the HTTP generator meta tag in the page source.
 
-![HTTP Website](Screenshots/httpwebsite-3.png)
+![HTTP Website](../Screenshots/httpwebsite-3.png)
 
 ---
 
@@ -61,7 +61,7 @@ dirb http://192.168.0.107
 - Ran `dirb` against the target to brute-force and discover hidden subdirectories.
 - No useful or sensitive information was found from the results.
 
-![No Info from Subdirectory](Screenshots/foundnoinforusingsubdirectory-4.png)
+![No Info from Subdirectory](../Screenshots/foundnoinforusingsubdirectory-4.png)
 
 ---
 
@@ -74,7 +74,7 @@ nmap 192.168.0.107 -sV -sC -T4
 - Re-examined the detailed Nmap scan output.
 - Confirmed the target is running **Drupal 7**, which is a known vulnerable version.
 
-![Nmap Found Drupal](Screenshots/nmapfounditrunsondrupal-5.png)
+![Nmap Found Drupal](../Screenshots/nmapfounditrunsondrupal-5.png)
 
 ---
 
@@ -84,7 +84,7 @@ nmap 192.168.0.107 -sV -sC -T4
 - Identified a critical Remote Code Execution vulnerability: **Drupalgeddon2**
 - Found the exploit available inside **Metasploit Framework** (`msfconsole`).
 
-![Exploit for Drupal](Screenshots/exploitfordrupal-6.png)
+![Exploit for Drupal](../Screenshots/exploitfordrupal-6.png)
 
 ---
 
@@ -105,7 +105,7 @@ run
   - `LHOST` — set to the attacker machine IP.
 - Executed the exploit.
 
-![Drupalgeddon2 in msfconsole](Screenshots/searchDrupalgeddon2inmsfconsole-7.png)
+![Drupalgeddon2 in msfconsole](../Screenshots/searchDrupalgeddon2inmsfconsole-7.png)
 
 ---
 
@@ -118,7 +118,7 @@ ls
 - The exploit executed successfully and returned a **Meterpreter shell**.
 - Listed the current directory contents to begin post-exploitation enumeration.
 
-![Got Meterpreter Shell](Screenshots/gotmeterpretershell-8.png)
+![Got Meterpreter Shell](../Screenshots/gotmeterpretershell-8.png)
 
 ---
 
@@ -131,7 +131,7 @@ cat flag1.txt
 - Spotted `flag1.txt` in the current directory listing.
 - Retrieved and read the first flag.
 
-![Found Flag 1](Screenshots/foundFlag1-9.png)
+![Found Flag 1](../Screenshots/foundFlag1-9.png)
 
 ---
 
@@ -145,7 +145,7 @@ cat settings.php
 - Navigated to `/var/www/sites/default`, a well-known Drupal configuration directory.
 - Opened `settings.php` and discovered **Flag 2** embedded inside the file.
 
-![Found Flag 2 in settings.php](Screenshots/foundFlag2insidesettingsphp-10.png)
+![Found Flag 2 in settings.php](../Screenshots/foundFlag2insidesettingsphp-10.png)
 
 ---
 
@@ -157,7 +157,7 @@ cat settings.php
   - **Password:** `R0ck3t`
 - Suspected the credentials could be reused to access the MySQL database.
 
-![User and Password from Flag 2](Screenshots/userandpasswdfromFlag2-11.png)
+![User and Password from Flag 2](../Screenshots/userandpasswdfromFlag2-11.png)
 
 ---
 
@@ -170,7 +170,7 @@ mysql -u dbuser -pR0ck3t drupaldb -e "SHOW TABLES;"
 - Connected to the MySQL database using the discovered credentials.
 - Dumped all available tables from the `drupaldb` database to identify where user data was stored.
 
-![MySQL Tables](Screenshots/mysqltables-12.png)
+![MySQL Tables](../Screenshots/mysqltables-12.png)
 
 ---
 
@@ -183,7 +183,7 @@ mysql -u dbuser -pR0ck3t drupaldb -e "SELECT uid,name,mail,pass FROM users;"
 - Queried the `users` table to extract stored credentials.
 - Found **2 users** with their corresponding **password hashes**.
 
-![Found 2 Users and Encoded Passwords](Screenshots/found2userandencodedpass-13.png)
+![Found 2 Users and Encoded Passwords](../Screenshots/found2userandencodedpass-13.png)
 
 ---
 
@@ -193,7 +193,7 @@ mysql -u dbuser -pR0ck3t drupaldb -e "SELECT uid,name,mail,pass FROM users;"
 - Used [hashes.com](https://hashes.com) to crack the hash online.
 - Successfully recovered the **plaintext password** for the admin account.
 
-![Found Password from hashes.com](Screenshots/foundpasswordofadminfromhashes.com-14.png)
+![Found Password from hashes.com](../Screenshots/foundpasswordofadminfromhashes.com-14.png)
 
 ---
 
@@ -207,7 +207,7 @@ http://192.168.0.107
 - Logged in using the cracked admin credentials.
 - Gained **administrative access** to the Drupal CMS.
 
-![Logging in via HTTP](Screenshots/logginginhttp-15.png)
+![Logging in via HTTP](../Screenshots/logginginhttp-15.png)
 
 ---
 
@@ -220,7 +220,7 @@ cat /etc/passwd | tail -n 5
 - Read the `/etc/passwd` file to enumerate local system users.
 - Identified a user called **flag4** along with its home directory path.
 
-![To Find Flag 4](Screenshots/tofindFlag4-16.png)
+![To Find Flag 4](../Screenshots/tofindFlag4-16.png)
 
 ---
 
@@ -234,7 +234,7 @@ cat flag4.txt
 - Navigated to the `flag4` user's home directory at `/home/flag4`.
 - Retrieved and read `flag4.txt`.
 
-![Found Flag 4](Screenshots/foundFlag4-17.png)
+![Found Flag 4](../Screenshots/foundFlag4-17.png)
 
 ---
 
@@ -257,7 +257,7 @@ find / -perm -u=s -type f 2>/dev/null
 - Searched the entire filesystem for SUID-enabled binaries that could be used to escalate to root.
 - Identified a binary that could be exploited to gain root access.
 
-![Privilege Escalation](Screenshots/privilage_escalation-18.png)
+![Privilege Escalation](../Screenshots/privilage_escalation-18.png)
 
 ---
 
@@ -271,7 +271,7 @@ cat /root/thefinalflag.txt
 - Used `find` to locate the final flag inside the `/root` directory.
 - Read the contents of `thefinalflag.txt` to complete the machine.
 
-![Found Final Flag](Screenshots/foundfinalFlag-19.png)
+![Found Final Flag](../Screenshots/foundfinalFlag-19.png)
 
 ---
 
