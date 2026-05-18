@@ -18,7 +18,7 @@ netdiscover -r <Attacker Machine IP>
 - Discovered the target machine at IP address: `192.168.0.107`
 - Identified the hostname as: **PCS Systemtechnik GmbH**
 
-![Found Target IP](Screenshots/foundtargetip-1.png)
+![Found Target IP](../Screenshots/foundtargetip-1.png)
 
 ---
 
