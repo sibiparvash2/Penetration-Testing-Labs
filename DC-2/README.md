@@ -3,7 +3,7 @@
 ## Network Discovery
 
 ```bash
-netdiscover -r <ATTACKER-IP>
+sudo netdiscover -r <ATTACKER-IP>
 ```
 
 - Performed network discovery to identify active hosts in the local subnet.
