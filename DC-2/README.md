@@ -18,7 +18,7 @@ sudo netdiscover -r <ATTACKER-IP>
 ## Initial Nmap Scan
 
 ```bash
-nmap -sV -sC 192.168.0.111
+nmap -sV -sC -T4 192.168.0.111
 ```
 
 - Performed service enumeration against the target system.
