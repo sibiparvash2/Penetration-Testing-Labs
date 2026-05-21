@@ -3,7 +3,6 @@
 ## Machine Information
 
 - Target Machine: `Simple_CTF`
-- Platform: :contentReference[oaicite:0]{index=0}
 - Connected to the target environment using the TryHackMe OpenVPN configuration.
 
 ![TryHackMe Machine](../Screenshots/tryhackme-1.png)
