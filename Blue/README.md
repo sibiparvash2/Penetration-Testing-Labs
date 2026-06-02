@@ -99,7 +99,7 @@ search shell_to_meterpreter
 - Searched for the shell upgrade module inside Metasploit.
 - Upgraded the standard shell to a Meterpreter session for advanced post-exploitation functionality.
 
-![Shell to Meterpreter](../Screenshots/shelltometerpreter.png)
+![Shell to Meterpreter](../Screenshots/shelltometerpreter-8.png)
 
 ---
 
